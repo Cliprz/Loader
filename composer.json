@@ -1,0 +1,21 @@
+{
+    "name": "cliprz/loader",
+    "description": "Single PHP file can autoload all classes and interfaces in your project.",
+    "license": "MIT",
+    "version": "1.0.0",
+    "keywords": [
+        "cliprz",
+        "autoload",
+        "loader",
+        "psr-0"
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "authors": [
+        {
+            "name": "Yousef Ismaeil",
+            "email": "cliprz@gmail.com"
+        }
+    ]
+}
