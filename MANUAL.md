@@ -4,7 +4,7 @@ Single PHP file can autoload all classes and interfaces in your project.
 
 Note
 ----
-Read our [Testing](http://www.github.com/Cliprz/Loader/Tests) to understand or loader.
+Read our [Tests](https://github.com/Cliprz/Loader/tree/master/Tests) to understand or loader.
 
 Methods
 -------
