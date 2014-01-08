@@ -1,5 +1,14 @@
 <?php namespace Cliprz\Loader;
 
+/*
+ * This file is part of the Cliprz package.
+ *
+ * (c) Yousef Ismaeil <cliprz@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use InvalidArgumentException;
 
 /**
@@ -7,7 +16,7 @@ use InvalidArgumentException;
  */
 if (class_exists('Cliprz\Loader\Autoload')) return;
 
-final class Autoload {
+class Autoload {
 
     /**
      * Namespace separator
@@ -115,22 +124,22 @@ final class Autoload {
                 static::$classMap[$cls] = $path;
             }
         } else {
-			$this->appendToMap($class,$path);
+            $this->appendToMap($class,$path);
         }
     }
 	
-	/**
-	 * Appends new class map to classes map array
-	 *
-	 * @param string Class name
-	 * @param string Class path
-	 * @access public
-	 */
-	public function appendToMap ($class,$path) {
-		if (!array_key_exists($class,static::$classMap)) {
-			static::$classMap[$class] = $path;
-		}
-	}
+    /**
+     * Appends new class map to classes map array
+     *
+     * @param string Class name
+     * @param string Class path
+     * @access public
+     */
+    public function appendToMap ($class,$path) {
+        if (!array_key_exists($class,static::$classMap)) {
+            static::$classMap[$class] = $path;
+        }
+    }
 
     /**
      * Get all classes and paths
@@ -205,7 +214,7 @@ final class Autoload {
         // Try to search for class from core path
         if (null != $this->getCore()) {
             if (is_file($this->getCore().$classPath)) {
-				$this->appendToMap($class,$this->getCore().$classPath);
+                $this->appendToMap($class,$this->getCore().$classPath);
                 return $this->getCore().$classPath;
             }
         }
@@ -220,7 +229,7 @@ final class Autoload {
             // Loop the fallback until find the class or return false in the end of method
             foreach ($this->getFallback() as $path) {
                 if (is_file(($file = rtrim($path,'/\\').DIRECTORY_SEPARATOR.$classPath))) {
-					$this->appendToMap($class,$file);
+                    $this->appendToMap($class,$file);
                     return $file;
                     break;
                 }
